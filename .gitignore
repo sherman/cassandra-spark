@@ -1,0 +1,6 @@
+.vagrant/
+.idea/
+.idea_modules/
+target/
+
+RUNNING_PID

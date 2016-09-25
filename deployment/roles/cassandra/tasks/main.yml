@@ -1,0 +1,30 @@
+- name: adding DataStax debian repository
+  apt_repository: repo='deb http://debian.datastax.com/community stable main' state=present
+
+- name: adding the key for DataStax repository
+  apt_key: url=http://debian.datastax.com/debian/repo_key state=present
+
+- name: installing C*
+  apt: name="cassandra=2.2.7" state=present update_cache=yes
+  notify: stop cassandra
+
+- name: Installing C* tools
+  apt: name="cassandra-tools=2.2.7" state=present update_cache=yes 
+  notify: stop cassandra
+
+- name: installing OpsCenter
+  apt: name=opscenter state=present
+  when: opscenter_host == "{{ inventory_hostname }}"
+  notify: start opscenter
+
+- shell: rm -rf {{ item }}
+  with_items:
+    - /var/lib/cassandra/data/*
+    - /var/lib/cassandra/commitlog/*
+
+- name: copying configuration
+  template: src={{ item }} dest=/etc/cassandra/
+  with_items:
+    - cassandra.yaml
+    - cassandra-env.sh
+  notify: restart cassandra
