@@ -18,7 +18,7 @@ Tested with the next versions of tools:
 
 ### Author
 
-Anton Kirillov
-Denis Gabaydulin
+* Anton Kirillov
+* Denis Gabaydulin
 
 Based on original scripts of Anton (https://github.com/akirillov/spark-cassandra)
