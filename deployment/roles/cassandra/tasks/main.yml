@@ -5,11 +5,11 @@
   apt_key: url=http://debian.datastax.com/debian/repo_key state=present
 
 - name: installing C*
-  apt: name="cassandra=2.2.7" state=present update_cache=yes
+  apt: name="cassandra=3.0.9" state=present update_cache=yes
   notify: stop cassandra
 
 - name: Installing C* tools
-  apt: name="cassandra-tools=2.2.7" state=present update_cache=yes 
+  apt: name="cassandra-tools=3.0.9" state=present update_cache=yes 
   notify: stop cassandra
 
 - name: installing OpsCenter

@@ -16,7 +16,8 @@
       opscenter_host: 192.168.5.101
       spark_master: 192.168.5.101
   roles:
-- role: common
+    - role: common
     - role: oracle-java
     - role: cassandra
-    - role: spark
+    - role: spark`
+

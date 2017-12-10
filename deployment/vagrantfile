@@ -7,7 +7,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 $num_instances = 2
 $instance_name_prefix = "cass"
-$vm_memory = 3072
+$vm_memory = 2048
 $vm_cpus = 1
 $ip_start = "192.168.5"
 
