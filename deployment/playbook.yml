@@ -19,5 +19,5 @@
     - role: common
     - role: oracle-java
     - role: cassandra
-    - role: spark`
+    - role: spark
 
